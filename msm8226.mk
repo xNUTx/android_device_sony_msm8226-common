@@ -248,4 +248,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.wfd.virtual=0
 
 # Include non-opensource parts
-$(call inherit-product, vendor/sony/msm8226-common/msm8226-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/sony/msm8226-common/msm8226-common-vendor.mk)
