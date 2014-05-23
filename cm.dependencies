@@ -1,9 +1,5 @@
 [
   {
-    "repository": "android_kernel_sony_msm8226",
-    "target_path": "kernel/sony/msm8226"
-  },
-  {
     "repository": "android_device_qcom_common",
     "target_path": "device/qcom/common"
   },
