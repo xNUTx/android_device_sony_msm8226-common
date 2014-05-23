@@ -41,7 +41,7 @@ LOCAL_CFLAGS += \
 LOCAL_C_INCLUDES:= \
     $(TARGET_OUT_HEADERS)/gps.utils \
     $(TARGET_OUT_HEADERS)/libloc_core \
-    device/sony/rhine-common/gps/libloc_api_50001
+    device/sony/msm8226-common/gps/libloc_api_50001
 
 LOCAL_COPY_HEADERS_TO:= libloc_eng/
 LOCAL_COPY_HEADERS:= \
@@ -60,7 +60,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := gps.msm8974
+LOCAL_MODULE := gps.msm8226
 LOCAL_MODULE_OWNER := qcom
 
 LOCAL_MODULE_TAGS := optional

@@ -249,7 +249,7 @@ etc/sec_config
 # Keylayout
 usr/keylayout/gpio-keys.kl
 usr/keylayout/mhl-rcp.kl
-usr/keylayout/msm8974-taiko-mtp-snd-card_Button_Jack.kl
+usr/keylayout/msm8226-tapan-mtp-snd-card_Button_Jack.kl
 
 # Keystore
 vendor/firmware/keymaster/keymaster.b00
@@ -308,7 +308,7 @@ etc/firmware/modem.b26
 etc/firmware/modem.mdt
 
 # NFC
-lib/hw/nfc.msm8974.so
+lib/hw/nfc_nci_pn547.msm8226.so
 
 # Playready
 etc/firmware/cmnlib.b00
@@ -381,7 +381,7 @@ bin/time_daemon
 bin/clearpad_fwloader
 
 # Sensors
-vendor/lib/hw/sensors.msm8974.so
+vendor/lib/hw/sensors.msm8226.so
 vendor/lib/libsensor_reg.so
 
 # Sysmon

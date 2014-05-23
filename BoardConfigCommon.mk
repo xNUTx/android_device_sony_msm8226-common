@@ -15,23 +15,23 @@
 # inherit from Sony common
 include device/sony/common/BoardConfigCommon.mk
 
-BOARD_EGL_CFG := device/sony/rhine-common/rootdir/system/lib/egl/egl.cfg
+BOARD_EGL_CFG := device/sony/msm8226-common/rootdir/system/lib/egl/egl.cfg
 
 # inherit from qcom-common
 include device/sony/qcom-common/BoardConfigCommon.mk
 
-TARGET_SPECIFIC_HEADER_PATH := device/sony/rhine-common/include
+TARGET_SPECIFIC_HEADER_PATH := device/sony/msm8226-common/include
 
 # Kernel properties
-TARGET_KERNEL_SOURCE := kernel/sony/msm8974
+TARGET_KERNEL_SOURCE := kernel/sony/msm8226
 
 # Platform
-TARGET_BOOTLOADER_BOARD_NAME := MSM8974
-TARGET_BOARD_PLATFORM := msm8974
-BOARD_VENDOR_PLATFORM := rhine
+TARGET_BOOTLOADER_BOARD_NAME := MSM8226
+TARGET_BOARD_PLATFORM := msm8226
+BOARD_VENDOR_PLATFORM := msm8226
 
 # Architecture
-TARGET_ARCH_VARIANT_CPU := cortex-a9
+TARGET_ARCH_VARIANT_CPU := cortex-a7
 TARGET_CPU_VARIANT := krait
 
 # Flags
@@ -43,9 +43,9 @@ TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
 # Kernel information
 BOARD_KERNEL_BASE     := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_CMDLINE  := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 msm_rtb.enable=0 lpj=192598 dwc3.maximum_speed=high dwc3_msm.prop_chg_detect=Y
+BOARD_KERNEL_CMDLINE  := androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 vmalloc=400M build_variant=user
 BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
-BOARD_CUSTOM_BOOTIMG_MK := device/sony/rhine-common/custombootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/sony/msm8226-common/custombootimg.mk
 BOARD_KERNEL_SEPARATED_DT := true
 
 # Qualcomm
@@ -75,7 +75,7 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # CM Hardware
-BOARD_HARDWARE_CLASS := device/sony/rhine-common/cmhw
+BOARD_HARDWARE_CLASS := device/sony/msm8226-common/cmhw
 
 # Dumpstate
 BOARD_LIB_DUMPSTATE := libdumpstate.sony
@@ -98,11 +98,11 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_rhine
+TARGET_INIT_VENDOR_LIB := libinit_msm8226
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    device/sony/rhine-common/sepolicy
+    device/sony/msm8226-common/sepolicy
 
 # The list below is order dependent
 BOARD_SEPOLICY_UNION := \
@@ -130,13 +130,13 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_USERIMAGES_USE_EXT4 := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/sony/rhine-common/rootdir/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/sony/msm8226-common/rootdir/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 
 # TWRP flags
-DEVICE_RESOLUTION := 1080x1920
+DEVICE_RESOLUTION := 720x1280
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_SDCARD_ON_DATA := true
 TW_HAS_NO_RECOVERY_PARTITION := true
@@ -153,10 +153,10 @@ TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,barrier=1,noauto_da_alloc,discard"
 TW_CRYPTO_FS_FLAGS := "0x00000406"
 TW_CRYPTO_KEY_LOC := "footer"
 TW_INCLUDE_FUSE_EXFAT := true
-TW_BOARD_CUSTOM_GRAPHICS := ../../../device/sony/rhine-common/recovery/twrpgraphics.c
+TW_BOARD_CUSTOM_GRAPHICS := ../../../device/sony/msm8226-common/recovery/twrpgraphics.c
 TW_BRIGHTNESS_PATH := /sys/class/leds/wled:backlight/brightness
 TW_MAX_BRIGHTNESS := 4095
 TW_NO_USB_STORAGE := true
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/sony/rhine-common
+TARGET_RELEASETOOLS_EXTENSIONS := device/sony/msm8226-common

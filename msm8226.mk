@@ -17,7 +17,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # qcom common
 $(call inherit-product, device/sony/qcom-common/qcom-common-330.mk)
 
-COMMON_PATH := device/sony/rhine-common
+COMMON_PATH := device/sony/msm8226-common
 
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 
@@ -55,7 +55,7 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/c6x02.sh:c6x02.sh
+    $(LOCAL_PATH)/recovery/D5x22.sh:D5x22.sh
 
 # Sbin
 PRODUCT_COPY_FILES += \
@@ -65,7 +65,7 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.primary.msm8974 \
+    audio.primary.msm8226 \
     audio.a2dp.default \
     audio.usb.default \
     audio.r_submix.default \
@@ -74,10 +74,10 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    hwcomposer.msm8974 \
-    gralloc.msm8974 \
-    copybit.msm8974 \
-    memtrack.msm8974
+    hwcomposer.msm8226 \
+    gralloc.msm8226 \
+    copybit.msm8226 \
+    memtrack.msm8226
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -96,11 +96,11 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     com.qualcomm.location \
-    gps.msm8974
+    gps.msm8226
 
 # Keystore
 PRODUCT_PACKAGES += \
-    keystore.msm8974
+    keystore.msm8226
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -248,4 +248,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.wfd.virtual=0
 
 # Include non-opensource parts
-$(call inherit-product, vendor/sony/rhine-common/rhine-common-vendor.mk)
+$(call inherit-product, vendor/sony/msm8226-common/msm8226-common-vendor.mk)
