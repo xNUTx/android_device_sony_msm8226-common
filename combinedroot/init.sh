@@ -18,7 +18,6 @@ busybox mkdir -m 555 -p /proc
 busybox mkdir -m 755 -p /sys
 
 # create device nodes
-busybox mknod -m 600 /dev/block/mmcblk0 b 179 0
 busybox mknod -m 600 ${BOOTREC_EVENT_NODE}
 busybox mknod -m 666 /dev/null c 1 3
 
@@ -26,39 +25,54 @@ busybox mknod -m 666 /dev/null c 1 3
 busybox mount -t proc proc /proc
 busybox mount -t sysfs sysfs /sys
 
+# check /cache/recovery/boot
+if busybox grep -q warmboot=0x77665502 /proc/cmdline ; then
+
+busybox echo "found reboot into recovery flag"  >>boot.txt
+
+else
+
 # trigger amber LED
 busybox echo 255 > ${BOOTREC_LED_RED}
 busybox echo 0 > ${BOOTREC_LED_GREEN}
 busybox echo 255 > ${BOOTREC_LED_BLUE}
 
+# trigger vibration
+busybox echo 200 > /sys/class/timed_output/vibrator/enable
+
 # keycheck
 busybox cat ${BOOTREC_EVENT} > /dev/keycheck&
 busybox sleep 3
 
+fi
 # android ramdisk
 load_image=/sbin/ramdisk.cpio
 
 # boot decision
 if [ -s /dev/keycheck ] || busybox grep -q warmboot=0x77665502 /proc/cmdline ; then
+
 	busybox echo 'RECOVERY BOOT' >>boot.txt
+
 	# orange led for recoveryboot
 	busybox echo 255 > ${BOOTREC_LED_RED}
 	busybox echo 100 > ${BOOTREC_LED_GREEN}
 	busybox echo 0 > ${BOOTREC_LED_BLUE}
+
 	# recovery ramdisk
-	busybox mknod -m 600 ${BOOTREC_FOTA_NODE}
-	busybox mount -o remount,rw /
-	busybox ln -sf /sbin/busybox /sbin/sh
-	extract_elf_ramdisk -i ${BOOTREC_FOTA} -o /sbin/ramdisk-recovery.cpio -t / -c
-	busybox rm /sbin/sh
+
+	## DooMLoRD: handle multiple recovery ramdisks based on keypress
+	
+	# default recovery ramdisk is CWM 
 	load_image=/sbin/ramdisk-recovery.cpio
+
 else
 	busybox echo 'ANDROID BOOT' >>boot.txt
-	# poweroff LED
-	busybox echo 0 > ${BOOTREC_LED_RED}
-	busybox echo 0 > ${BOOTREC_LED_GREEN}
-	busybox echo 0 > ${BOOTREC_LED_BLUE}
 fi
+
+# poweroff LED
+busybox echo 0 > ${BOOTREC_LED_RED}
+busybox echo 0 > ${BOOTREC_LED_GREEN}
+busybox echo 0 > ${BOOTREC_LED_BLUE}
 
 # kill the keycheck process
 busybox pkill -f "busybox cat ${BOOTREC_EVENT}"
