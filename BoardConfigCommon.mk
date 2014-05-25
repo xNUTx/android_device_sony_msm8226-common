@@ -160,3 +160,6 @@ TW_NO_USB_STORAGE := true
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/sony/msm8226-common
+
+# Use retire fence from MDP driver
+TARGET_DISPLAY_USE_RETIRE_FENCE := true
