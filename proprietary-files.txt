@@ -257,6 +257,8 @@ bin/imsqmidaemon
 vendor/lib/lib-imsSDP.so
 vendor/lib/
 vendor/lib/
+vendor/lib/
+vendor/lib/
 
 # IRSC
 bin/irsc_util
