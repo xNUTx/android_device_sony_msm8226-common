@@ -254,6 +254,9 @@ etc/firmware/tzhdcp.mdt
 bin/ims_rtp_daemon
 bin/imsdatadaemon
 bin/imsqmidaemon
+vendor/lib/lib-imsSDP.so
+vendor/lib/
+vendor/lib/
 
 # IRSC
 bin/irsc_util
@@ -333,6 +336,7 @@ lib/libWVphoneAPI.so
 lib/libdrmdecrypt.so
 vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
+vendor/lib/lib-dplmedia.so
 
 # EGL
 vendor/lib/egl/eglsubAndroid.so
