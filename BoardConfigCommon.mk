@@ -155,6 +155,7 @@ TW_BOARD_CUSTOM_GRAPHICS := ../../../device/sony/msm8226-common/recovery/twrpgra
 TW_BRIGHTNESS_PATH := /sys/class/leds/lm3630-lcd-bl/brightness
 TW_MAX_BRIGHTNESS := 255
 TW_NO_USB_STORAGE := true
+TW_NO_REBOOT_BOOTLOADER := true
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/sony/msm8226-common
