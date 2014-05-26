@@ -255,10 +255,11 @@ bin/ims_rtp_daemon
 bin/imsdatadaemon
 bin/imsqmidaemon
 vendor/lib/lib-imsSDP.so
-vendor/lib/
-vendor/lib/
-vendor/lib/
-vendor/lib/
+vendor/lib/lib-imsdpl.so
+vendor/lib/lib-imsqimf.so
+vendor/lib/lib-imsrcs.so
+vendor/lib/lib-imsvt.so
+vendor/lib/lib-imsxml.so
 
 # IRSC
 bin/irsc_util
