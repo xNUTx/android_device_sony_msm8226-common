@@ -15,6 +15,7 @@ vendor/lib/libadiertac.so
 vendor/lib/libaudcal.so
 
 # ADSP
+bin/adsprpcd
 etc/firmware/adsp.b00
 etc/firmware/adsp.b01
 etc/firmware/adsp.b02
@@ -38,6 +39,7 @@ vendor/lib/libbt-vendor.so
 
 # Camera
 bin/mm-qcamera-daemon
+bin/mm-qcamera-app
 etc/firmware/cpp_firmware_v1_1_1.fw
 etc/firmware/cpp_firmware_v1_1_6.fw
 etc/firmware/cpp_firmware_v1_2_0.fw
@@ -248,6 +250,11 @@ etc/firmware/tzhdcp.b03
 etc/firmware/tzhdcp.flist
 etc/firmware/tzhdcp.mdt
 
+# IMS
+bin/ims_rtp_daemon
+bin/imsdatadaemon
+bin/imsqmidaemon
+
 # IRSC
 bin/irsc_util
 etc/sec_config
@@ -308,6 +315,35 @@ etc/firmware/modem.mdt
 # NFC
 lib/hw/nfc_nci_pn547.msm8226.so
 
+# Other
+bin/bridgemgrd
+bin/charger_monitor
+bin/nl_listener
+bin/port-bridge
+bin/ptt_socket_app
+bin/rfs_access
+bin/sapd
+bin/subsystem_ramdump
+bin/thermal-engine
+etc/permissions/qcnvitems.xml
+etc/permissions/qcrilhook.xml
+framework/qcnvitems.jar
+framework/qcrilhook.jar
+lib/libWVphoneAPI.so
+lib/libdrmdecrypt.so
+vendor/lib/drm/libdrmwvmplugin.so
+vendor/lib/mediadrm/libwvdrmengine.so
+
+# EGL
+vendor/lib/egl/eglsubAndroid.so
+vendor/lib/egl/libEGL_adreno.so
+vendor/lib/egl/libGLESv1_CM_adreno.so
+vendor/lib/egl/libGLESv2_adreno.so
+vendor/lib/egl/libq3dtools_adreno.so
+
+# HW
+lib/hw/audio.primary.msm8226.so
+
 # Playready
 etc/firmware/cmnlib.b00
 etc/firmware/cmnlib.b01
@@ -322,6 +358,7 @@ vendor/lib/libmm-abl-oem.so
 vendor/lib/libmm-abl.so
 
 # QMI
+bin/qmiproxy
 vendor/lib/libqcci_legacy.so
 vendor/lib/libqdi.so
 vendor/lib/libqdp.so
