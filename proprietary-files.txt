@@ -267,7 +267,7 @@ etc/sec_config
 
 # Keylayout
 usr/keylayout/gpio-keys.kl
-usr/keylayout/msm8226-tapan-mtp-snd-card_Button_Jack.kl
+usr/keylayout/msm8226-tapan-snd-card_Button_Jack.kl
 
 # Lights
 lib/hw/lights.default.so:lib/hw/vendor-lights.default.so
@@ -376,7 +376,7 @@ bin/qseecomd
 vendor/lib/libdrmdiag.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
-system/lib/libQSEEComAPI.so
+lib/libQSEEComAPI.so
 
 # Security
 bin/suntrold
@@ -426,10 +426,8 @@ lib/sysmon/sysmon_charge_current_limit_level.so
 lib/sysmon/sysmon_charging.so
 lib/sysmon/sysmon_corelimit.so
 lib/sysmon/sysmon_dc_current_limit_value.so
-lib/sysmon/sysmon_emmc_therm.so
 lib/sysmon/sysmon_gpu_perflevel.so
 lib/sysmon/sysmon_lcd_brightness_level.so
-lib/sysmon/sysmon_modem_8x26.so
 lib/sysmon/sysmon_msm_thermal_disable.so
 lib/sysmon/sysmon_msm_therm.so
 lib/sysmon/sysmon_pa_therm0.so
