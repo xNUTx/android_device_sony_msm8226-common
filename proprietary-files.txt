@@ -416,8 +416,7 @@ lib/libta.so
 bin/time_daemon
 -vendor/lib/libtime_genoff.so
 
-# Touchscreen
-bin/clearpad_fwloader
+
 
 # Sensors
 vendor/lib/hw/sensors.msm8226.so
