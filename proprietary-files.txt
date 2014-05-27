@@ -428,6 +428,7 @@ lib/sysmon/sysmon_corelimit.so
 lib/sysmon/sysmon_dc_current_limit_value.so
 lib/sysmon/sysmon_gpu_perflevel.so
 lib/sysmon/sysmon_lcd_brightness_level.so
+lib/sysmon/sysmon_modem_8X26.so
 lib/sysmon/sysmon_msm_thermal_disable.so
 lib/sysmon/sysmon_msm_therm.so
 lib/sysmon/sysmon_pa_therm0.so
