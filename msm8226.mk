@@ -98,9 +98,6 @@ PRODUCT_PACKAGES += \
     com.qualcomm.location \
     gps.msm8226
 
-# Keystore
-PRODUCT_PACKAGES += \
-    keystore.msm8226
 
 # NFC
 PRODUCT_PACKAGES += \
