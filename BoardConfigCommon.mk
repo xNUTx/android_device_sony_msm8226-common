@@ -26,7 +26,7 @@ TARGET_SPECIFIC_HEADER_PATH := device/sony/msm8226-common/include
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 
 # Kernel properties
-TARGET_KERNEL_SOURCE := kernel/sony/msm8226
+#TARGET_KERNEL_SOURCE := kernel/sony/msm8226
 
 # Platform
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
